@@ -28,10 +28,9 @@ def psi_0(x, y):
 
 def V(x,y,t,psi):       # A Lennard-Jones potential
 
+    DE = 1.0
     sl = (x+xmax+1e-12)/(r0/2**(1/6)) # Fix the infinity
     sr = (xmax-x+1e-12)/(r0/2**(1/6)) # Fix the infinity
-    V = 4*(1/sl**12-1/sl**6+1/sr**12-1/sr**6)
-
-    V -= np.amin(V)
+    V = 4*DE*(1/sl**12-1/sl**6+1/sr**12-1/sr**6)
 
     return V
